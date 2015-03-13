@@ -1,18 +1,22 @@
 <?php
- /*
- * Project:		EQdkp-Plus
- * License:		Creative Commons - Attribution-Noncommercial-Share Alike 3.0 Unported
- * Link:		http://creativecommons.org/licenses/by-nc-sa/3.0/
- * -----------------------------------------------------------------------
- * Date:		$Date$
- * -----------------------------------------------------------------------
- * @author		$Author$
- * @copyright	2006-2014 EQdkp-Plus Developer Team
- * @link		http://eqdkp-plus.com
- * @package		eqdkp-plus
- * @version		$Rev$
+/*	Project:	EQdkp-Plus
+ *	Package:	Everquest2 game package
+ *	Link:		http://eqdkp-plus.eu
  *
- * $Id$
+ *	Copyright (C) 2006-2015 EQdkp-Plus Developer Team
+ *
+ *	This program is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU Affero General Public License as published
+ *	by the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *
+ *	This program is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU Affero General Public License for more details.
+ *
+ *	You should have received a copy of the GNU Affero General Public License
+ *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 if ( !defined('EQDKP_INC') ){
@@ -22,7 +26,7 @@ if ( !defined('EQDKP_INC') ){
 if(!class_exists('eq2')) {
 	class eq2 extends game_generic {
 		protected static $apiLevel	= 20;
-		public $version				= '2.3.1';
+		public $version				= '2.3.2';
 		protected $this_game		= 'eq2';
 		protected $types			= array('classes', 'races', 'factions', 'roles', 'filters', 'realmlist');
 		protected $classes			= array();
@@ -149,6 +153,7 @@ if(!class_exists('eq2')) {
 		}
 
 		public function profilefields(){
+			$this->load_type('realmlist', array($this->lang));
 			$xml_fields = array(
 				'gender'	=> array(
 					'type'			=> 'dropdown',
@@ -164,6 +169,25 @@ if(!class_exists('eq2')) {
 					'lang'			=> 'uc_guild',
 					'size'			=> 32,
 					'undeletable'	=> true
+				),
+				'servername'	=> array(
+						'category'		=> 'character',
+						'lang'			=> 'servername',
+						'type'			=> 'text',
+						'size'			=> '21',
+						'edecode'		=> true,
+						'autocomplete'	=> $this->realmlist[$this->lang],
+						'undeletable'	=> true,
+						'sort'			=> 2
+				),
+				'level'	=> array(
+						'type'			=> 'spinner',
+						'category'		=> 'character',
+						'lang'			=> 'uc_level',
+						'max'			=> 100,
+						'min'			=> 1,
+						'undeletable'	=> true,
+						'sort'			=> 4
 				),
 			);
 			return $xml_fields;

@@ -1,19 +1,22 @@
 <?php
- /*
- * Project:		EQdkp-Plus
- * License:		Creative Commons - Attribution-Noncommercial-Share Alike 3.0 Unported
- * Link:		http://creativecommons.org/licenses/by-nc-sa/3.0/
- * -----------------------------------------------------------------------
- * Began:		2009
- * Date:		$Date$
- * -----------------------------------------------------------------------
- * @author		$Author$
- * @copyright	2006-2011 EQdkp-Plus Developer Team
- * @link		http://eqdkp-plus.com
- * @package		eqdkp-plus
- * @version		$Rev$
- * 
- * $Id$
+/*	Project:	EQdkp-Plus
+ *	Package:	Everquest2 game package
+ *	Link:		http://eqdkp-plus.eu
+ *
+ *	Copyright (C) 2006-2015 EQdkp-Plus Developer Team
+ *
+ *	This program is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU Affero General Public License as published
+ *	by the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *
+ *	This program is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU Affero General Public License for more details.
+ *
+ *	You should have received a copy of the GNU Affero General Public License
+ *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 if ( !defined('EQDKP_INC') ){
@@ -162,7 +165,6 @@ $german_array = array(
 		'uc_imp_failed'						=> 'Beim Import der Daten trat ein Fehler auf. Bitte versuche es erneut.',
 		"uc_updat_armory" 					=> "Von SOE aktualisieren",
 		'uc_charname'						=> 'Charaktername',
-		'servername'						=> 'Server\'s name',
 		'uc_charfound'						=> "Der Charakter  <b>%1\$s</b> wurde gefunden.",
 		'uc_charfound2'						=> "Das letzte Update dieses Charakters war am <b>%1\$s</b>.",
 		'uc_charfound3'						=> 'ACHTUNG: Beim Import werden bisher gespeicherte Daten überschrieben!',
